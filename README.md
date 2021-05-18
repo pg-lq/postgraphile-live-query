@@ -2,6 +2,10 @@
 
 Optimized GraphQL live-queries for Postgraphile, using json-patches.
 
+## Prerequisites
+
+1) The [subscription-lds](https://github.com/graphile/graphile-engine/tree/v4/packages/subscriptions-lds#installation) plugin should already be set up for your Postgraphile server.
+
 ## Integration (install + usage)
 
 ### Server
