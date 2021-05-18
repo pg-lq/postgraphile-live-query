@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		// general
+		"sourceMap": true,
+		"watch": true,
+		"noEmit": true,
+		"forceConsistentCasingInFileNames": true, // creates duplicates in import-helper plugins otherwise
+
+		// modules/paths
+		"module": "esnext",
+		"moduleResolution": "node",
+
+		// compiler options
+		"target": "esnext",
+		"noImplicitAny": false,
+		"experimentalDecorators": true,
+		"allowSyntheticDefaultImports": true
+	}
+}

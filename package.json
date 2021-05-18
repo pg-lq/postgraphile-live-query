@@ -1,0 +1,30 @@
+{
+  "name": "postgraphile-live-query",
+  "description": "Demos showing how to implement live-queries in PostGraphile, using various client libraries and change-stream protocols.",
+  "version": "0.0.1",
+  "author": "Venryx (https://venryx.com)",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "Packages/postgraphile-plugin",
+    "Packages/apollo-plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Venryx/postgraphile-live-query.git"
+  },
+  "scripts": {
+    "start": "nps"
+  },
+  "devDependencies": {
+    "concurrently": "^6.1.0",
+    "nps": "^5.10.0",
+    "snowpack": "^3.4.0"
+  },
+  "dependencies": {
+    "@n1ru4l/graphql-live-query-patch": "^0.3.1",
+    "@types/node": "^15.3.0",
+    "graphql": "^15.5.0",
+    "postgraphile": "^4.11.0"
+  }
+}

@@ -1,0 +1,24 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "node",
+			//"type": "tsnode",
+			"request": "launch",
+			"name": "Debug-launch server.todo.patches",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"program": "${workspaceFolder}/Server/Build/esm/index.js",
+			//"program": "${workspaceFolder}/Server/index.ts",
+			"args": ["--variant", "patches"],
+			"outFiles": [
+				"${workspaceFolder}/**/*.js"
+				//"${workspaceFolder}/Server/build/esm/**/*.js"
+			]
+		}
+	]
+}
