@@ -2,12 +2,11 @@
 	"name": "@pg-lq/postgraphile-plugin",
 	"description": "TODO",
 	"version": "0.0.1",
-	"author": "Venryx (https://venryx.com)",
 	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/pg-lq/postgraphile-live-query.git"
-	},
+	"author": "Venryx (https://venryx.com)",
+	"repository": "https://github.com/pg-lq/postgraphile-live-query",
+	"main": "./Build/ESM/Source/index.js",
+	"types": "./Build/Types/index.d.ts",
 	"scripts": {
 		"start": "nps"
 	},

@@ -1,6 +1,8 @@
-import {builtinModules} from "module";
-import path from 'path';
-const __dirname = path.join(path.dirname(decodeURI(new URL(import.meta.url).pathname))).replace(/^\\([A-Z]:\\)/, "$1");
+//import {builtinModules} from "module";
+const {builtinModules} = require("module");
+const path = require("path");
+
+//const __dirname = path.join(path.dirname(decodeURI(new URL(import.meta.url).pathname))).replace(/^\\([A-Z]:\\)/, "$1");
 
 const forProd = process.env.NODE_ENV == "production";
 
@@ -36,7 +38,7 @@ module.exports = {
 		open: "none",
 	},
 	buildOptions: {
-		out: "Build/esm",
+		out: "Build/ESM",
 		sourcemap: true,
 	},
 };

@@ -2,17 +2,14 @@
   "name": "postgraphile-live-query",
   "description": "Optimized GraphQL live-queries for Postgraphile, using json-patches.",
   "version": "0.0.1",
-  "author": "Venryx (https://venryx.com)",
   "license": "MIT",
+  "author": "Venryx (https://venryx.com)",
+  "repository": "https://github.com/Venryx/postgraphile-live-query",
   "private": true,
   "workspaces": [
     "Packages/postgraphile-plugin",
     "Packages/apollo-plugin"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Venryx/postgraphile-live-query.git"
-  },
   "scripts": {
     "start": "nps"
   },
@@ -25,6 +22,8 @@
     "@n1ru4l/graphql-live-query-patch": "^0.3.1",
     "@types/node": "^15.3.0",
     "graphql": "^15.5.0",
-    "postgraphile": "^4.11.0"
+    "postgraphile": "^4.11.0",
+    "react": "^17.0.2",
+    "typescript": "^4.2.4"
   }
 }

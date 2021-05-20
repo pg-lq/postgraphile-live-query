@@ -3,7 +3,7 @@
 		// general
 		"sourceMap": true,
 		"watch": true,
-		"noEmit": true,
+		//"noEmit": true,
 		"forceConsistentCasingInFileNames": true, // creates duplicates in import-helper plugins otherwise
 
 		// modules/paths

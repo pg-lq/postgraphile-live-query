@@ -11,7 +11,7 @@ Optimized GraphQL live-queries for Postgraphile, using json-patches.
 
 ### Server
 
-1) Install: `yarn add @pg-lq/postgraphile-plugin` (or `npm install ...`)
+1) Install: `yarn add @pg-lq/postgraphile-plugin` (or `npm i @pg-lq/postgraphile-plugin`)
 2) Integrate:
 ```diff
 +import {GeneratePatchesPlugin} from "@pg-lq/postgraphile-plugin";
@@ -34,7 +34,7 @@ const postgraphileMiddleware = postgraphile(
 
 ### Client (Apollo)
 
-1) Install: `yarn add @pg-lq/apollo-plugin` (or `npm install ...`)
+1) Install: `yarn add @pg-lq/apollo-plugin` (or `npm i @pg-lq/apollo-plugin`)
 2) Integrate:
 ```diff
 +import {ApplyPatchesLink} from "@pg-lq/apollo-plugin";
@@ -49,3 +49,4 @@ const apolloClient = new ApolloClient({
 
 1) Download/clone this repo.
 2) Run: `yarn workspaces run install`
+3) Run: `npm start dev` (or ctrl+shift+b in vscode)

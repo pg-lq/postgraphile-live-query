@@ -18,6 +18,7 @@ module.exports = {
 		open: "none",
 	},
 	buildOptions: {
-		out: "Build/esm"
+		out: "Build/ESM",
+		sourcemap: true,
 	},
 };
