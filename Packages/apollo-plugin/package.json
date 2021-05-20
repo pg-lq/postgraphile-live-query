@@ -1,15 +1,19 @@
 {
 	"name": "@pg-lq/apollo-plugin",
 	"description": "TODO",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"license": "MIT",
 	"author": "Venryx (https://venryx.com)",
 	"repository": "https://github.com/pg-lq/postgraphile-live-query",
-	"publicConfig": {
-		"access": "public"
-	},
 	"main": "./Build/ESM/Source/index.js",
 	"types": "./Build/Types/index.d.ts",
+	"publishConfig": {
+		"access": "public"
+	},
+	"files": [
+		"Build",
+		"Source"
+	],
 	"scripts": {
 		"start": "nps"
 	},
