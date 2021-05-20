@@ -1,6 +1,6 @@
 {
   "name": "postgraphile-live-query",
-  "description": "Demos showing how to implement live-queries in PostGraphile, using various client libraries and change-stream protocols.",
+  "description": "Optimized GraphQL live-queries for Postgraphile, using json-patches.",
   "version": "0.0.1",
   "author": "Venryx (https://venryx.com)",
   "license": "MIT",
