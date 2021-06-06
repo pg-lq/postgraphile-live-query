@@ -91,6 +91,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@n1ru4l/graphql-live-query@npm:^0.7.1":
+  version: 0.7.1
+  resolution: "@n1ru4l/graphql-live-query@npm:0.7.1"
+  peerDependencies:
+    graphql: ^15.4.0
+  checksum: f38726cb6b950af820977d18b9f327d842494deca6388926afb55ad4247170aa381dfe04745de67a8fe57dd51baab10bb937e51979f2322cb63fda4465d77abf
+  languageName: node
+  linkType: hard
+
 "@npmcli/git@npm:^2.0.1":
   version: 2.0.9
   resolution: "@npmcli/git@npm:2.0.9"
@@ -2572,6 +2581,7 @@ fsevents@~2.1.2:
   version: 0.0.0-use.local
   resolution: "postgraphile-live-query@workspace:."
   dependencies:
+    "@n1ru4l/graphql-live-query": ^0.7.1
     "@n1ru4l/graphql-live-query-patch": ^0.3.1
     "@types/node": ^15.3.0
     concurrently: ^6.1.0

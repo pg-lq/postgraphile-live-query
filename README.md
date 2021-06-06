@@ -5,7 +5,7 @@ Optimized GraphQL live-queries for Postgraphile, using json-patches.
 ## Prerequisites
 
 1) The [subscription-lds](https://github.com/graphile/graphile-engine/tree/v4/packages/subscriptions-lds#installation) plugin should already be set up for your Postgraphile server.
-2) The Postgraphile plugin uses a new hook, which [still needs to be merged](https://github.com/graphile/graphile-engine/issues/725#issuecomment-841926083). For now, use [my fork](https://github.com/Venryx/postgraphile/tree/main). (or integrate [its changes](https://github.com/graphile/postgraphile/compare/main...Venryx:main))
+2) You must be using Postgraphile v4.12.1 or newer. (the Postgraphile plugin requires the existence of a new hook, which waws [added only recently](https://github.com/graphile/postgraphile/pull/1483))
 
 ## Integration (install + usage)
 

@@ -2,7 +2,7 @@ import graphql_live_query_patch from "@n1ru4l/graphql-live-query-patch";
 const {createLiveQueryPatchGenerator} = graphql_live_query_patch;
 
 export const GeneratePatchesPlugin = {
-	["postgraphile:ws:executionResult"](result, {contextValue}) {
+	["postgraphile:liveSubscribe:executionResult"](result, {contextValue}) {
 		if (contextValue._clientID == null) {
 			contextValue._clientID = global["_lastClientID"] = (global["_lastClientID"]|0) + 1;
 			const patchGenerator = createLiveQueryPatchGenerator();
