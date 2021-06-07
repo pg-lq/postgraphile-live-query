@@ -48,5 +48,5 @@ const apolloClient = new ApolloClient({
 ## Development
 
 1) Download/clone this repo.
-2) Run: `yarn workspaces run install`
+2) Run: `yarn`
 3) Run: `npm start dev` (or ctrl+shift+b in vscode)
