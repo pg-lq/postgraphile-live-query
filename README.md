@@ -63,8 +63,8 @@ new GeneratePatchesPlugin({
 	}),
 
 	// uses fast-json-patch
-	// PRO: json-patches are more readable (at expense of slightly longer length)
-	// CON: no special handling of array-item reordering (so can be very inefficient for that)
+	// PRO: json-patches are more readable (at expense of slightly longer length in some cases)
+	// CON: no special handling of array-item reordering/deletion (so can be very inefficient for that)
 	generatePatchFunc: CreateGeneratePatchFunc_FastJSONPatch(),
 })
 ```
