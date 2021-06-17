@@ -73,12 +73,7 @@ new GeneratePatchesPlugin({
 
 #### `applyPatchFunc: (previous, patch)=>Object`
 
-```ts
-new ApplyPatchesLink({
-	[...]
-	applyPatchFunc: null, // see "generatePatchFunc" section for options, and their tradeoffs
-})
-```
+> See [generatePatchFunc](#generatepatchfunc-previous-currentpatch) section for options, and their tradeoffs.
 
 ## Development
 
