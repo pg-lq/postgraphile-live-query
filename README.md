@@ -16,7 +16,7 @@ Optimized GraphQL live-queries for Postgraphile, using json-patches.
 ```diff
 +import {GeneratePatchesPlugin} from "@pg-lq/postgraphile-plugin";
 
-+const pluginHook = makePluginHook([GeneratePatchesPlugin]);
++const pluginHook = makePluginHook([new GeneratePatchesPlugin({...options})]);
 const postgraphileMiddleware = postgraphile(
 	"DATABASE_URL,
 	"SCHEMA_NAME",
@@ -40,9 +40,43 @@ const postgraphileMiddleware = postgraphile(
 +import {ApplyPatchesLink} from "@pg-lq/apollo-plugin";
 const apolloClient = new ApolloClient({
 -	link: link,
-+	link: new ApplyPatchesLink(link),
++	link: new ApplyPatchesLink({baseLink: link, ...options}),
 	[...]
 });
+```
+
+## Options
+
+### GeneratePatchesPlugin
+
+#### `generatePatchFunc: (previous, current)=>Patch`
+
+```ts
+new GeneratePatchesPlugin({
+	// uses the patcher lib that graphql-live-query-patch defaults to (currently fast-json-patch)
+	generatePatchFunc: null,
+
+	// uses json-diff-patch (recommended; baseline)
+	generatePatchFunc: CreateGeneratePatchFunc_JSONDiffPatch({
+		// see here for list of options: https://github.com/benjamine/jsondiffpatch#options
+		// note that our wrapper defaults these to support efficient array-item reordering
+	}),
+
+	// uses fast-json-patch
+	// PRO: json-patches are more readable (at expense of slightly longer length)
+	// CON: no special handling of array-item reordering (so can be very inefficient for that)
+	generatePatchFunc: CreateGeneratePatchFunc_FastJSONPatch(),
+})
+```
+
+### ApplyPatchesLink
+
+#### `applyPatchFunc: (previous, patch)=>Object`
+
+```ts
+new GeneratePatchesPlugin({
+	generatePatchFunc: null, // see "generatePatchFunc" section for options, and their tradeoffs
+})
 ```
 
 ## Development

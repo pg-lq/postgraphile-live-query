@@ -2,6 +2,8 @@
 const {builtinModules} = require("module");
 const path = require("path");
 
+const peerDeps = []; //Object.keys(require("./package.json").peerDependencies);
+
 //const __dirname = path.join(path.dirname(decodeURI(new URL(import.meta.url).pathname))).replace(/^\\([A-Z]:\\)/, "$1");
 
 const forProd = process.env.NODE_ENV == "production";
@@ -25,10 +27,12 @@ module.exports = {
 			//"postgraphile/build/postgraphile/http/mapAsyncIterator".replace(/\//g, "\\"),
 			//"iterall",
 		],
-		external: builtinModules.concat(
+		external: builtinModules.concat(peerDeps).concat(
 			"express", "postgraphile", "commander", "graphile-utils",
 			"graphql",
 			"@n1ru4l/graphql-live-query-patch",
+			"jsondiffpatch",
+			//"fast-json-patch",
 			"iterall",
 			"postgraphile/build/postgraphile/http/mapAsyncIterator",
 			"postgraphile/build/postgraphile/http/mapAsyncIterator.js"

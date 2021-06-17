@@ -1,3 +1,5 @@
+const peerDeps = Object.keys(require("./package.json").peerDependencies);
+
 const forProd = process.env.NODE_ENV == "production";
 
 // config docs: https://www.snowpack.dev/reference/configuration
@@ -13,6 +15,11 @@ module.exports = {
 	plugins: [],
 	packageOptions: {
 		//external: forProd ? ['react-vextensions', 'react-vcomponents'] : []
+		external: peerDeps.concat(
+			"@n1ru4l/graphql-live-query-patch",
+			"jsondiffpatch",
+			//"fast-json-patch",
+		),
 	},
 	devOptions: {
 		open: "none",

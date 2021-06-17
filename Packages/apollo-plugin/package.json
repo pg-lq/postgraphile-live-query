@@ -5,7 +5,9 @@
 	"license": "MIT",
 	"author": "Venryx (https://venryx.com)",
 	"repository": "https://github.com/pg-lq/postgraphile-live-query",
-	"main": "./Build/ESM/Source/index.js",
+	"#main": "./Build/ESM/Source/index.js",
+	"#type": "module",
+	"module": "./Build/ESM/Source/index.js",
 	"types": "./Build/Types/index.d.ts",
 	"publishConfig": {
 		"access": "public"
@@ -26,6 +28,8 @@
 		"@apollo/client": "^3.3.18"
 	},
 	"dependencies": {
-		"@n1ru4l/graphql-live-query-patch": "^0.3.1"
+		"@n1ru4l/graphql-live-query-patch": "^0.3.1",
+		"fast-json-patch": "^3.0.0-1",
+		"jsondiffpatch": "^0.4.1"
 	}
 }
