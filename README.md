@@ -7,9 +7,9 @@ Optimized GraphQL live-queries for Postgraphile, using json-patches.
 1) The [subscription-lds](https://github.com/graphile/graphile-engine/tree/v4/packages/subscriptions-lds#installation) plugin should already be set up for your Postgraphile server.
 2) You must be using Postgraphile v4.12.1 or newer. (the Postgraphile plugin requires the existence of a new hook, which was [added only recently](https://github.com/graphile/postgraphile/pull/1483))
 
-## Integration (install + usage)
+## Server-side
 
-### Server
+### Integration
 
 1) Install: `yarn add @pg-lq/postgraphile-plugin` (or `npm i @pg-lq/postgraphile-plugin`)
 2) Integrate:
@@ -32,7 +32,29 @@ const postgraphileMiddleware = postgraphile(
 )
 ```
 
-### Client (Apollo)
+### GeneratePatchesPlugin (options)
+
+#### `generatePatchFunc: (previous, current)=>Patch`
+
+```ts
+// uses the patcher lib that graphql-live-query-patch defaults to (currently fast-json-patch)
+generatePatchFunc: null,
+
+// uses json-diff-patch (recommended; baseline)
+generatePatchFunc: CreateGeneratePatchFunc_JSONDiffPatch({
+	// see here for list of options: https://github.com/benjamine/jsondiffpatch#options
+	// note that our wrapper defaults these to support efficient array-item reordering
+}),
+
+// uses fast-json-patch
+// PRO: json-patches are more readable (at expense of slightly longer length)
+// CON: no special handling of array-item reordering (so can be very inefficient for that)
+generatePatchFunc: CreateGeneratePatchFunc_FastJSONPatch(),
+```
+
+## Client-side
+
+### Integration
 
 1) Install: `yarn add @pg-lq/apollo-plugin` (or `npm i @pg-lq/apollo-plugin`)
 2) Integrate:
@@ -45,31 +67,7 @@ const apolloClient = new ApolloClient({
 });
 ```
 
-## Options
-
-### GeneratePatchesPlugin
-
-#### `generatePatchFunc: (previous, current)=>Patch`
-
-```ts
-new GeneratePatchesPlugin({
-	// uses the patcher lib that graphql-live-query-patch defaults to (currently fast-json-patch)
-	generatePatchFunc: null,
-
-	// uses json-diff-patch (recommended; baseline)
-	generatePatchFunc: CreateGeneratePatchFunc_JSONDiffPatch({
-		// see here for list of options: https://github.com/benjamine/jsondiffpatch#options
-		// note that our wrapper defaults these to support efficient array-item reordering
-	}),
-
-	// uses fast-json-patch
-	// PRO: json-patches are more readable (at expense of slightly longer length)
-	// CON: no special handling of array-item reordering (so can be very inefficient for that)
-	generatePatchFunc: CreateGeneratePatchFunc_FastJSONPatch(),
-})
-```
-
-### ApplyPatchesLink
+### ApplyPatchesLink (options)
 
 #### `applyPatchFunc: (previous, patch)=>Object`
 
