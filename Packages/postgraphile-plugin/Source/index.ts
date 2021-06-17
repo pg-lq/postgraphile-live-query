@@ -1,1 +1,1 @@
-export * from "./GeneratePatchesPlugin";
+export * from "./GeneratePatchesPlugin.js";

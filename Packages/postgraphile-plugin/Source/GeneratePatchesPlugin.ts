@@ -1,6 +1,7 @@
 import graphql_live_query_patch, {GeneratePatchFunction, ApplyPatchFunction} from "@n1ru4l/graphql-live-query-patch";
 const {createLiveQueryPatchGenerator} = graphql_live_query_patch;
-import jsondiffpatch, {Config} from "jsondiffpatch";
+import jsondiffpatch from "jsondiffpatch";
+import {Config} from "jsondiffpatch";
 import {compare} from "fast-json-patch";
 
 export function CreateGeneratePatchFunc_JSONDiffPatch(opts?: Config): GeneratePatchFunction {

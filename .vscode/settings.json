@@ -1,4 +1,7 @@
 {
+	"typescript.tsdk": "node_modules\\typescript\\lib",
+	"typescript.preferences.importModuleSpecifierEnding": "js",
+	"javascript.preferences.importModuleSpecifierEnding": "js",
 	"autoHide.autoHideSideBar": true,
 	//"debug.javascript.unmapMissingSources": true
 }

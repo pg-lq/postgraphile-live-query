@@ -1,4 +1,7 @@
 {
-	"extends": "../../tsconfig_base.jsonc",
+	"extends": "../../tsconfig.base.json",
+	"compilerOptions": {
+		"outDir": "Build/ESM_Node",
+	},
 	"include": ["Source/**/*"]
 }

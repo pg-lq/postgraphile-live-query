@@ -1,1 +1,1 @@
-export * from "./ApplyPatchesLink";
+export * from "./ApplyPatchesLink.js";

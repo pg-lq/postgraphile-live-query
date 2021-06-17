@@ -1,7 +1,9 @@
 import {ApolloLink, FetchResult, Observable, Operation} from "@apollo/client";
 import {ApplyPatchFunction, createApplyLiveQueryPatch} from "@n1ru4l/graphql-live-query-patch";
 import { applyPatch } from "fast-json-patch";
-import jsondiffpatch, {Config} from "jsondiffpatch";
+//import jsondiffpatch from "jsondiffpatch";
+import * as jsondiffpatch from "jsondiffpatch"; // needed for demos repo atm, fsr
+import {Config} from "jsondiffpatch";
 
 // patch-func helpers
 export function CreateApplyPatchFunc_JSONDiffPatch(opts?: Config): ApplyPatchFunction {
@@ -31,7 +33,9 @@ export class ApplyPatchesLink extends ApolloLink {
 	applyPatchFunc: ApplyPatchFunction = CreateApplyPatchFunc_JSONDiffPatch();
 
 	public request(operation: Operation): Observable<FetchResult> | null {
-		const applyLiveQueryPatch = createApplyLiveQueryPatch();
+		const applyLiveQueryPatch = createApplyLiveQueryPatch({
+			applyPatch: this.applyPatchFunc,
+		});
 		const queue = [];
 		const iter: AsyncIterableIterator<Record<string, unknown>> = {
 			async* [Symbol.asyncIterator]() {

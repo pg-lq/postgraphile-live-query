@@ -5,10 +5,10 @@
 	"license": "MIT",
 	"author": "Venryx (https://venryx.com)",
 	"repository": "https://github.com/pg-lq/postgraphile-live-query",
-	"#main": "./Build/ESM/Source/index.js",
-	"#type": "module",
-	"module": "./Build/ESM/Source/index.js",
-	"types": "./Build/Types/index.d.ts",
+	"type": "module",
+	"#main": "./Build/ES5/index.js",
+	"module": "./Build/ESM_Node/index.js",
+	"types": "./Build/ESM_Node/index.d.ts",
 	"publishConfig": {
 		"access": "public"
 	},
