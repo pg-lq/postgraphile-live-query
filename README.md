@@ -73,7 +73,7 @@ new GeneratePatchesPlugin({
 
 #### `applyPatchFunc: (previous, patch)=>Object`
 
-> See [generatePatchFunc](#generatepatchfunc-previous-currentpatch) section for options, and their tradeoffs.
+> See [generatePatchFunc](#generatepatchfunc-previous-currentpatch) section for options, and their tradeoffs. (replacing `CreateGeneratePatchFunc_` with `CreateApplyPatchFunc_`)
 
 ## Development
 
