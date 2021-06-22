@@ -80,3 +80,9 @@ new GeneratePatchesPlugin({
 1) Download/clone this repo.
 2) Run: `yarn`
 3) Run: `npm start dev` (or ctrl+shift+b in vscode)
+
+## Troubleshooting
+
+If you're on NodeJS 14.13.0+, you may get an error (when using NodeJS to run server code that uses the `@pg-lq/postgraphile-plugin` package) about the named-import `compare` not being found in `fast-json-patch`. This is due to an issue in the `package.json` file of `fast-json-patch`.
+
+See here for more details (and the fix): https://github.com/Starcounter-Jack/JSON-Patch/issues/277
