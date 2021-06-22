@@ -7,6 +7,11 @@
 	"repository": "https://github.com/pg-lq/postgraphile-live-query",
 	"type": "module",
 	"#main": "./Build/ES5/index.js",
+	"##main": "./Build/ESM_Node/index.js",
+	"exports": {
+		".": "./Build/ESM_Node/index.js",
+		"./*": "./*"
+	},
 	"module": "./Build/ESM_Node/index.js",
 	"types": "./Build/ESM_Node/index.d.ts",
 	"publishConfig": {
