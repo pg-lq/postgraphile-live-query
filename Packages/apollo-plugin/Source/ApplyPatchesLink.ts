@@ -1,13 +1,13 @@
 import {ApolloLink, FetchResult, Observable, Operation} from "@apollo/client";
 import {ApplyPatchFunction, createApplyLiveQueryPatch} from "@n1ru4l/graphql-live-query-patch";
-import { applyPatch } from "fast-json-patch";
+import fastJSONPatch from "fast-json-patch";
 //import jsondiffpatch from "jsondiffpatch";
-import * as jsondiffpatch from "jsondiffpatch"; // needed for demos repo atm, fsr
-import {Config} from "jsondiffpatch";
+import * as jsonDiffPatch from "jsondiffpatch"; // needed for demos repo atm, fsr
+import type {Config} from "jsondiffpatch";
 
 // patch-func helpers
 export function CreateApplyPatchFunc_JSONDiffPatch(opts?: Config): ApplyPatchFunction {
-	const patcher = jsondiffpatch.create({
+	const patcher = jsonDiffPatch.create({
 		// we don't need to supply an objectHash func here, because it's only used during patch *generation*
 		...opts,
 	});
@@ -18,7 +18,7 @@ export function CreateApplyPatchFunc_JSONDiffPatch(opts?: Config): ApplyPatchFun
 }
 export function CreateApplyPatchFunc_FastJSONPatch(): ApplyPatchFunction {
 	return (previous, patch)=>{
-		const result = applyPatch(previous, patch, true, false);
+		const result = fastJSONPatch.applyPatch(previous, patch, true, false);
 		return result.newDocument;
 	};
 }

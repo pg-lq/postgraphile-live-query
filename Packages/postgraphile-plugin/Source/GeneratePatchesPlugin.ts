@@ -1,11 +1,11 @@
 import graphql_live_query_patch, {GeneratePatchFunction, ApplyPatchFunction} from "@n1ru4l/graphql-live-query-patch";
 const {createLiveQueryPatchGenerator} = graphql_live_query_patch;
-import jsondiffpatch from "jsondiffpatch";
-import {Config} from "jsondiffpatch";
-import {compare} from "fast-json-patch";
+import fastJSONPatch from "fast-json-patch";
+import jsonDiffPatch from "jsondiffpatch";
+import type {Config} from "jsondiffpatch";
 
 export function CreateGeneratePatchFunc_JSONDiffPatch(opts?: Config): GeneratePatchFunction {
-	const patcher = jsondiffpatch.create({
+	const patcher = jsonDiffPatch.create({
 		objectHash: (item, index)=>{
 			// this function is used only to when objects are not equal by ref
 			/*const newObj = _(obj).toPairs().sortBy(0).fromPairs().value();
@@ -22,7 +22,7 @@ export function CreateGeneratePatchFunc_JSONDiffPatch(opts?: Config): GeneratePa
 	};
 }
 export function CreateGeneratePatchFunc_FastJSONPatch(): GeneratePatchFunction {
-	return (previous, current)=>compare(previous, current);
+	return (previous, current)=>fastJSONPatch.compare(previous, current);
 }
 
 export class GeneratePatchesPlugin {

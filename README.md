@@ -83,6 +83,8 @@ new GeneratePatchesPlugin({
 
 ## Troubleshooting
 
-If you're on NodeJS 14.13.0+, you may get an error (when using NodeJS to run server code that uses the `@pg-lq/postgraphile-plugin` package) about the named-import `compare` not being found in `fast-json-patch`. This is due to an issue in the `package.json` file of `fast-json-patch`.
+1) If you're on NodeJS 14.13.0+, you may get an error (when using NodeJS to run server code that uses the `@pg-lq/postgraphile-plugin` package) about the named-import `compare` not being found in `fast-json-patch`. This is due to an issue in the `package.json` file of `fast-json-patch`.
 
 See here for more details (and the fix): https://github.com/Starcounter-Jack/JSON-Patch/issues/277
+
+2) You may get a Typescript error "Cannot find namespace 'JSX'." for `types.d.ts` in apollo-client. If hit, just replace the `JSX.Element` with `any` for now. (not sure when it started)

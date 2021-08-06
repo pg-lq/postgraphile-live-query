@@ -2,9 +2,10 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"type": "npm",
-			"script": "start dev",
-			"problemMatcher": [],
+			"label": "#1 dev",
+			"type": "shell",
+			"command": "npm start dev",
+			"problemMatcher": "$tsc-watch",
 			"isBackground": true,
 			"group": "build"
 		}
